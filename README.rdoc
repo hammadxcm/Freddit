@@ -1,0 +1,17 @@
+Freddit
+
+Reddit clone for practice and glory.
+
+
+TO DO:
+  -Add deleted boolean to posts and update them to deleted status rather than deleting the resource.
+  -Implementing sorting for sub/all.
+  -Add pages to posts.
+  -Add generic new post form to /submit.
+  -Add Support for link posts.
+  -Add Embeddly for content preview.
+  -Show Moderators.
+  -Allow moderators to add/remove other moderators.
+  -Add user show page with recent comments and posts.
+  -Add search
+  -infinite scroll

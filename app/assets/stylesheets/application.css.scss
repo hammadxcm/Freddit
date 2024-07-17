@@ -1,0 +1,509 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+input {
+  border: 1px solid black;
+  display: block;
+  background: white;
+  border-radius: 3px;
+  padding: 7px 7px;
+  margin: 10px 0;
+}
+
+label {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow:hidden;
+}
+
+.freddit {
+  position: relative;
+}
+
+.spinner {
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.nav-bar {
+  position: fixed;
+  z-index: 100;
+  background: #CEE3F8;
+  height: 75px;
+  width: 100%;
+  border-bottom: 1px solid #5F99CF;
+}
+
+.tabs {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tabs li {
+  background: #EFF7FF;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.tabs li.selected {
+  background: white;
+  margin-bottom: -5px;
+}
+
+
+.sub-list {
+  font-size: 10px;
+  background: #F0F0F0;
+  border-bottom: 1px solid grey;
+}
+
+.sub-list > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.sub-list > ul > li {
+  margin: 3px 0;
+  padding: 3px 6px 3px 5px;
+  border-right: 1px solid #aaa;
+  flex-shrink: 0;
+}
+
+.sub-list .current-sub {
+  color: #FC5F00;
+  font-weight: bold;
+}
+
+.sub-list > ul > li:hover {
+  text-decoration: underline;
+}
+
+.logo-container {
+  display: flex;
+  margin-top: 10px;
+  font-size: 30px;
+  padding-left: 5px;
+}
+
+.logo {
+  padding: 5px;
+}
+
+.logo-image {
+  margin-top: 10px;
+  height: 35px;
+  width: 35px;
+  background-size: 35px 35px;
+  display: block;
+  background-image: image-url("beard_logo.gif");
+}
+
+.sub-name {
+  position: absolute;
+  left: 140px;
+  top: 53px;
+}
+
+.sub-name:hover {
+  text-decoration: underline;
+}
+
+.user-info {
+  font-size: 12px;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 55px;
+  background: #EFF7FF;
+  border-top-left-radius: 5px;
+  padding: 3px;
+}
+
+.main-content {
+  padding-top: 75px;
+}
+
+.sign-up-link {
+  color: blue;
+  cursor: pointer;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 450px;
+  padding: 50px;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 5px;
+  background: #F8FBFD;
+  display: flex;
+  flex-direction: row;
+}
+
+.exit-modal {
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+}
+
+.sign-up-form,
+.sign-in-form {
+  padding: 50px;
+  width: 50%;
+}
+
+.sign-up-form > h2,
+.sign-in-form > h2{
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #4F86B5;
+}
+
+.sign-in-form {
+  border-left: 1px solid #aaa;
+}
+
+.modal-content input[type="submit"] {
+  background: #4F86B5;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.clickable {
+  color: #315b7d;
+}
+
+.clickable:hover {
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+.post-preview {
+  display: block;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-preview h4 {
+  font-size: 1.2em;
+}
+
+.post-preview > p {
+  font-size: 0.8em;
+}
+
+.post-preview button {
+  margin-right: 10px;
+}
+
+.preview {
+  max-width: 700px;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.post-detail {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-detail h3 {
+  font-size: 18px;
+  padding: 5px;
+}
+
+.post-detail p {
+}
+
+.post-body {
+  border: 1px solid #eee;
+  padding: 7px;
+}
+
+.submitter-info {
+  font-size: 12px;
+  padding: 2px 5px 10px 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.comments {
+  margin-left: 25px;
+}
+
+.post-comments {
+  margin-left: -25px;
+}
+
+.comment {
+  border: 1px solid lightgrey;
+  padding: 7px;
+  margin: 5px;
+}
+
+.comment button {
+  font-size: 14px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  background: white;
+  margin-right: 10px;
+}
+.comment > p {
+  padding: 5px;
+}
+
+.comment > a {
+ padding: 2px 5px;
+}
+
+.comment-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-body {
+  padding: 5px;
+}
+
+.comment-body p {
+  margin-bottom: 5px;
+}
+
+.odd {
+  background: #eee;
+}
+
+.even {
+  background: white;
+}
+
+.comment-form {
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.comment-form > textarea {
+  padding: 10px;
+  width: 400px;
+  height: 100px;
+  border: 1px solid #aaa;
+  background: white;
+}
+
+.comment-buttons {
+  display: flex;
+  flex-flow: row;
+}
+
+.comment-buttons > button {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  margin-right: 10px;
+}
+
+.post-vote-form {
+  font-size: 16px;
+}
+
+.post-vote-form > button {
+  display: block;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.post-vote-form > .votes {
+  padding: 2px 6px 2px 0;
+  margin-left: -3px;
+  text-align: center;
+}
+
+.active-up {
+  background: linear-gradient(100deg, #FFDA2F, #FF8F35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active-down {
+  background: linear-gradient(100deg, #35A6FF, #0040FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.post-preview-left {
+  padding: 0 10px 0 2px;
+}
+
+.post-detail-left {
+  padding: 0 10px 0 0;
+}
+
+.sidebar {
+  position: absolute;
+  top: 77px;
+  right: 0;
+  width: 300px;
+  background: #eee;
+  box-shadow: -1px 1px 3px grey;
+  border-radius: 0 0 0 10px;
+}
+
+.sidebar .new-post-button {
+  padding: 10px 20px;
+  margin: 15px;
+  background: linear-gradient(110deg, #F8FBFE, #cfe1f6);
+  border: 2px solid #c4dbf1;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #369;
+}
+
+.sidebar .new-post-button:hover {
+  background: linear-gradient(110deg, #C3D9ED, #75A5D3);
+  color: white;
+  border: 2px solid #369;
+}
+
+.sidebar .search {
+  width: 80%;
+  padding: 5px;
+  margin: 15px;
+}
+
+.side-sign-in-form {
+  padding: 5px 10px;
+  margin: 15px;
+  width: 80%;
+  border: 1px solid black;
+  display: flex;
+}
+
+.side-sign-in-form input {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+}
+
+.side-sign-in-form .side-login-button {
+  text-align: center;
+  width: 50px;
+  height: 25px;
+  margin-left: 190px;
+  font-size: 12px;
+
+}
+
+.new-post-form {
+
+}
+
+.new-post-form > h4 {
+  padding: 15px;
+  font-size: 1.3em;
+}
+
+.new-post-form section {
+  padding: 20px;
+  background: paleturquoise;
+  width: 500px;
+  margin: 20px;
+}
+
+.new-post-form section > h4 {
+  margin-bottom: 10px;
+}
+
+.new-post-form input,
+.new-post-form textarea {
+  color: black;
+  border: 1px solid black;
+  display: block;
+  background: white;
+  padding: 10px;
+  width: 95%;
+  border-radius: 1px;
+}
+
+.new-post-form button {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 5px 10px;
+  margin: 10px 20px;
+}
