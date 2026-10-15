@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.11.3'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'timecop'
-gem 'paperclip'
+gem 'paperclip', '~> 5.2'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'activerecord-import'
