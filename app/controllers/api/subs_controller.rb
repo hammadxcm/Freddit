@@ -9,7 +9,7 @@ class Api::SubsController < ApplicationController
     @sub = Sub.find_by(title: params[:id])
     @posts = @sub
       .posts
-      .by_params(params)
+      .by_params(params.permit(:sort, :order, :page, :hours, :days).to_h)
       .includes(:user, :votes, comments: [:votes, { user: :votes }]
     )
     render :show

@@ -6,7 +6,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 
-class AddPostIdToComments < ActiveRecord::Migration
+class AddPostIdToComments < ActiveRecord::Migration[4.2]
   def change
     remove_column :comments, :commentable_id
     remove_column :comments, :commentable_type

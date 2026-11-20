@@ -1,4 +1,4 @@
-class AddAttachmentAvatarToSubs < ActiveRecord::Migration
+class AddAttachmentAvatarToSubs < ActiveRecord::Migration[4.2]
   def self.up
     change_table :subs do |t|
       t.attachment :bg_image

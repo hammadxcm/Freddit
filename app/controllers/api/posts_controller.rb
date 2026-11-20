@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = Post
-      .by_params(params)
+      .by_params(params.permit(:sort, :order, :page, :hours, :days).to_h)
       .includes(:sub, :user, :votes, comments: [:user, :votes])
     render :index
   end
@@ -14,8 +14,7 @@ class Api::PostsController < ApplicationController
       .find(params[:id])
 
     @comments = Comment.confidence_sorted_by_post(@post)
-    ActiveRecord::Associations::Preloader.new.preload(@comments, :user)
-    ActiveRecord::Associations::Preloader.new.preload(@comments, :votes)
+    ActiveRecord::Associations::Preloader.new(records: @comments, associations: [:user, :votes]).call
     render :show
   end
 
