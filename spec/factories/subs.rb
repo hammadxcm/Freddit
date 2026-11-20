@@ -9,7 +9,7 @@
 #  updated_at  :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :sub do
     title { [Faker::Hipster.word, Faker::Hacker.noun].sample }

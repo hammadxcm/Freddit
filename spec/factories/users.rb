@@ -11,12 +11,12 @@
 #  updated_at      :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :user do
-    username { Faker::Internet.user_name }
+    username { Faker::Internet.username }
     email { Faker::Internet.email }
-    password "password"
+    password { "password" }
   end
 
 end

@@ -9,7 +9,7 @@ sennnacy = User.create!(username: "Sennacy", email: "sennacy@sennacy.com", passw
 firetrux = User.create!(username: "Firetrux", email: "firetrux@firetrux.com", password: "firetruxfiretrux")
 
 50.times do
-  user = FactoryGirl.build(:user)
+  user = FactoryBot.build(:user)
   redo unless user.valid?
   user.save!
 end
@@ -26,7 +26,7 @@ javascript = Sub.create!(title: "javascript", description: "Abandon all hope, ye
 app_academy = Sub.create!(title: "appacademy", description: "Learn all the things!")
 
 22.times do
-  new_sub = FactoryGirl.build(:sub)
+  new_sub = FactoryBot.build(:sub)
   redo unless new_sub.valid?
   new_sub.save!
 end
@@ -47,7 +47,7 @@ user_ids = User.pluck(:id)
 posts = []
 Timecop.freeze(12.hours.ago)
 720.times do
-  posts << FactoryGirl.create(
+  posts << FactoryBot.create(
     :post,
     sub_id: sub_ids.sample,
     user_id: user_ids.sample,
@@ -68,7 +68,7 @@ comments = []
   post = posts.sample
   parent_comment_id = [post.comments.pluck(:id).sample, nil].sample
 
-  comments << FactoryGirl.build(
+  comments << FactoryBot.build(
     :comment,
     post_id: post.id,
     user_id: users.sample.id,
@@ -86,7 +86,7 @@ votes = []
 
 User.all.each do |user|
   300.times do
-    vote = FactoryGirl.build(
+    vote = FactoryBot.build(
       :post_vote,
       votable_id: posts.sample.id,
       user_id: user.id
@@ -95,7 +95,7 @@ User.all.each do |user|
   end
 
   300.times do
-    vote = FactoryGirl.build(
+    vote = FactoryBot.build(
       :comment_vote,
       votable_id: comments.sample.id,
       user_id: user.id

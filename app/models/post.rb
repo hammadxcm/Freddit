@@ -68,11 +68,11 @@ class Post < ActiveRecord::Base
   def self.by_order(posts, params)
     case params[:sort]
     when "top"
-      posts.order("SUM(votes.value) DESC")
+      posts.order(Arel.sql("SUM(votes.value) DESC"))
     when "new"
       posts.order("created_at DESC")
     when "hot"
-      posts.order(<<-SQL)
+      posts.order(Arel.sql(<<-SQL))
         ( LOG(GREATEST(ABS(SUM(votes.value)), 1)) * SIGN(SUM(votes.value)) )
       + ( (EXTRACT(epoch from posts.created_at) - 1457822407) / 45000) DESC
       SQL
